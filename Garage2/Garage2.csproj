@@ -146,6 +146,10 @@
     <Compile Include="Migrations\201706121151588_ Nullable CheckOutTime.Designer.cs">
       <DependentUpon>201706121151588_ Nullable CheckOutTime.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706121226093_Vehicle.Model as string.cs" />
+    <Compile Include="Migrations\201706121226093_Vehicle.Model as string.Designer.cs">
+      <DependentUpon>201706121226093_Vehicle.Model as string.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Vehicle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -211,6 +215,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706121151588_ Nullable CheckOutTime.resx">
       <DependentUpon>201706121151588_ Nullable CheckOutTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706121226093_Vehicle.Model as string.resx">
+      <DependentUpon>201706121226093_Vehicle.Model as string.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
