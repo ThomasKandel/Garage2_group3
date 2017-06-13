@@ -38,7 +38,10 @@ namespace Garage2.Controllers
         // GET: Vehicles/Create
         public ActionResult Create()
         {
-            return View();
+            var vehicle = new Vehicle { CheckInTime = DateTime.Now };
+            return View(vehicle);
+
+            //return View();
         }
 
         // POST: Vehicles/Create

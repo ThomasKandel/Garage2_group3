@@ -131,6 +131,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\VehiclesController.cs" />
     <Compile Include="DataAccess\ParkingContext.cs" />
+    <Compile Include="Enum\VehicleType.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -149,6 +150,10 @@
     <Compile Include="Migrations\201706121226093_Vehicle.Model as string.cs" />
     <Compile Include="Migrations\201706121226093_Vehicle.Model as string.Designer.cs">
       <DependentUpon>201706121226093_Vehicle.Model as string.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706121414175_change vehicle.type from string to dropDown.cs" />
+    <Compile Include="Migrations\201706121414175_change vehicle.type from string to dropDown.Designer.cs">
+      <DependentUpon>201706121414175_change vehicle.type from string to dropDown.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Vehicle.cs" />
@@ -194,6 +199,7 @@
     <Content Include="Views\Vehicles\Details.cshtml" />
     <Content Include="Views\Vehicles\Edit.cshtml" />
     <Content Include="Views\Vehicles\Index.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Enum.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -218,6 +224,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706121226093_Vehicle.Model as string.resx">
       <DependentUpon>201706121226093_Vehicle.Model as string.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706121414175_change vehicle.type from string to dropDown.resx">
+      <DependentUpon>201706121414175_change vehicle.type from string to dropDown.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
