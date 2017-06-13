@@ -24,7 +24,7 @@ namespace Garage2.Controllers
 
 
 
-            var vehicles = db.Vehicles.Select(p => p); 
+            var vehicles = db.Vehicles.Where(p => p.CheckOutTime.Equals(null)); 
             ViewData["CurrentFilter"] = searchString;
 
             if (!String.IsNullOrEmpty(searchString))
@@ -136,7 +136,7 @@ namespace Garage2.Controllers
         }
 
         // GET: Vehicles/Delete/5
-        public ActionResult Delete(int? id)
+        public ActionResult CheckOut(int? id)
         {
             if (id == null)
             {
@@ -150,15 +150,27 @@ namespace Garage2.Controllers
             return View(vehicle);
         }
 
+       
+
         // POST: Vehicles/Delete/5
-        [HttpPost, ActionName("Delete")]
+        [HttpPost, ActionName("CheckOut")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult CheckOutConfirmed(int id)
         {
             Vehicle vehicle = db.Vehicles.Find(id);
-            db.Vehicles.Remove(vehicle);
+            //db.Vehicles.Remove(vehicle);
+            vehicle.CheckOutTime = DateTime.Now; 
+
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Receipt", new { id = id });
+        }
+
+        public ActionResult Receipt(int id)
+        {
+
+            var vehicle = db.Vehicles.Where(p => p.Id.Equals(id));
+
+            return View(vehicle);
         }
 
         protected override void Dispose(bool disposing)
