@@ -47,11 +47,11 @@
 
             
 
-                @((item.CheckOutTime.Value - item.CheckInTime).Duration())
+                @((item.CheckOutTime.Value - item.CheckInTime).Duration().ToString(@"dd\.hh\:mm\:ss"))
             </td>
             <td>
                 
-                @(((item.CheckOutTime.Value.TimeOfDay - item.CheckInTime.TimeOfDay).TotalHours * 60).ToString()) SEK
+                @(((item.CheckOutTime.Value - item.CheckInTime).TotalHours * 60).ToString("C2"))
             </td>
                 
             
