@@ -4,38 +4,51 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Garage Parking List</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Check-In new Vehicle", "Create")
 </p>
+
+<form asp-action="Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Find by Vehicle Registartion Number: <input type="text" name="SearchString" value="@ViewData["currentFilter"]" />
+            <input type="submit" value="Search" class="btn btn-default" /> |
+            @Html.ActionLink("Back to Full List", "Index")
+
+        </p>
+    </div>
+
+</form>
+
 <table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.RegNum)
+
+            <a href="@Url.Action("Index", "Vehicles", new { orderBy = ViewBag.RegNumSortParm, searchString = @ViewData["currentFilter"] })">
+                <img src="~/img/sort_up_down2.png">
+            </a>
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Type)
+            <a href="@Url.Action("Index", "Vehicles", new { orderBy = ViewBag.VehicleTypeSortParm, searchString = @ViewData["currentFilter"] })">
+                <img src="~/img/sort_up_down2.png">
+            </a>
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Color)
+            <a href="@Url.Action("Index", "Vehicles", new { orderBy = ViewBag.ColorSortParm, searchString = @ViewData["currentFilter"] })">
+                <img src="~/img/sort_up_down2.png">
+            </a>
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Brand)
+            <a href="@Url.Action("Index", "Vehicles", new { orderBy = ViewBag.BrandSortParm, searchString = @ViewData["currentFilter"] })">
+                <img src="~/img/sort_up_down2.png">
+            </a>
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Model)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Wheels)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CheckInTime)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CheckOutTime)
-        </th>
-        <th></th>
     </tr>
 
 @foreach (var item in Model) {
@@ -53,21 +66,8 @@
             @Html.DisplayFor(modelItem => item.Brand)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Model)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Wheels)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CheckInTime)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CheckOutTime)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
             @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink("Check-out", "Delete", new { id=item.Id })
         </td>
     </tr>
 }

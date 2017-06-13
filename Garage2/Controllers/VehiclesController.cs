@@ -15,10 +15,53 @@ namespace Garage2.Controllers
         private ParkingContext db = new ParkingContext();
 
         // GET: Vehicles
-        public ActionResult Index()
+        public ActionResult Index(string orderBy, string searchString)
         {
-            return View(db.Vehicles.ToList());
-        }
+            ViewBag.RegNumSortParm = orderBy == "RegNum" ? "RegNum_desc" : "RegNum";
+            ViewBag.VehicleTypeSortParm = orderBy == "VehicleType" ? "VehicleType_desc" : "VehicleType";
+            ViewBag.ColorSortParm = orderBy == "Color" ? "Color_desc" : "Color";
+            ViewBag.BrandSortParm = orderBy == "Brand" ? "Brand_desc" : "Brand";
+
+
+
+            var vehicles = db.Vehicles.Select(p => p); 
+            ViewData["CurrentFilter"] = searchString;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                vehicles = vehicles.Where(p => p.RegNum.Equals(searchString));
+            }
+
+            switch (orderBy)
+            {
+                case "RegNum":
+                    vehicles = vehicles.OrderBy(p => p.RegNum);
+                    break;
+                case "RegNum_desc":
+                    vehicles = vehicles.OrderByDescending(p => p.RegNum);
+                    break;
+                case "VehicleType":
+                    vehicles = vehicles.OrderBy(p => p.Type);
+                    break;
+                case "VehicleType_desc":
+                    vehicles = vehicles.OrderByDescending(p => p.Type);
+                    break;
+                case "Color":
+                    vehicles = vehicles.OrderBy(p => p.Color);
+                    break;
+                case "Color_desc":
+                    vehicles = vehicles.OrderByDescending(p => p.Color);
+                    break;
+                case "Brand":
+                    vehicles = vehicles.OrderBy(p => p.Brand);
+                    break;
+                case "Brand_desc":
+                    vehicles = vehicles.OrderByDescending(p => p.Brand);
+                    break;
+            }
+
+               return View(vehicles.ToList());
+            }
 
         // GET: Vehicles/Details/5
         public ActionResult Details(int? id)
