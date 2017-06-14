@@ -1,0 +1,75 @@
+﻿@model IEnumerable<Garage2.Models.Vehicle>
+
+@{
+    ViewBag.Title = "Receipt";
+}
+
+<h2>Receipt</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RegNum)
+
+     
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CheckInTime)
+            
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CheckOutTime)
+            
+        </th>
+        <th>
+            Total Time
+           
+        </th>
+        <th>
+            Fees
+
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RegNum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CheckInTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CheckOutTime)
+            </td>
+            <td>
+
+            
+
+                @((item.CheckOutTime.Value - item.CheckInTime).Duration().ToString(@"dd\.hh\:mm\:ss"))
+            </td>
+            <td>
+                
+                @(((item.CheckOutTime.Value - item.CheckInTime).TotalHours * 60).ToString("C2"))
+            </td>
+                
+            
+        </tr>
+        
+    }
+</table>
+
+<input type="button" id="btnPrint" value="Print this page" />
+@Html.ActionLink("Back to List", "Index")
+
+@section scripts
+{
+    <script>
+        $(function() {
+            $("#btnPrint").click(function() {
+                window.print();
+            });
+        });
+    </script>
+}
