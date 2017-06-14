@@ -155,6 +155,18 @@
     <Compile Include="Migrations\201706121414175_change vehicle.type from string to dropDown.Designer.cs">
       <DependentUpon>201706121414175_change vehicle.type from string to dropDown.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706131356114_added validations to vehicle class.cs" />
+    <Compile Include="Migrations\201706131356114_added validations to vehicle class.Designer.cs">
+      <DependentUpon>201706131356114_added validations to vehicle class.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706131410442_did some stuff previous migration caused, not sure what.cs" />
+    <Compile Include="Migrations\201706131410442_did some stuff previous migration caused, not sure what.Designer.cs">
+      <DependentUpon>201706131410442_did some stuff previous migration caused, not sure what.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706140743548_added more Data Annotation Validator Attributes to vehicle class.cs" />
+    <Compile Include="Migrations\201706140743548_added more Data Annotation Validator Attributes to vehicle class.Designer.cs">
+      <DependentUpon>201706140743548_added more Data Annotation Validator Attributes to vehicle class.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Vehicle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -228,6 +240,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706121414175_change vehicle.type from string to dropDown.resx">
       <DependentUpon>201706121414175_change vehicle.type from string to dropDown.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706131356114_added validations to vehicle class.resx">
+      <DependentUpon>201706131356114_added validations to vehicle class.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706131410442_did some stuff previous migration caused, not sure what.resx">
+      <DependentUpon>201706131410442_did some stuff previous migration caused, not sure what.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706140743548_added more Data Annotation Validator Attributes to vehicle class.resx">
+      <DependentUpon>201706140743548_added more Data Annotation Validator Attributes to vehicle class.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
