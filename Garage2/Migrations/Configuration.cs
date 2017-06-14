@@ -30,8 +30,8 @@ namespace Garage2.Migrations
 
             context.Vehicles.AddOrUpdate(
                 p => p.RegNum,
-                new Vehicle { RegNum = "WEB 214", Type = global::VehicleType.Car, Color = "Silver", Brand = "TOYOTA", Model = "2005", Wheels = 4, CheckInTime = DateTime.Now, CheckOutTime = DateTime.Now },
-                new Vehicle { RegNum = "OMM 455", Type = global::VehicleType.Boat, Color = "Silver", Brand = "Volvo", Model = "2017", Wheels = 4, CheckInTime = DateTime.Now,  CheckOutTime = DateTime.Now }
+                new Vehicle { RegNum = "WEB214", Type = global::VehicleType.Car, Color = "Silver", Brand = "TOYOTA", Model = "2005", Wheels = 4, CheckInTime = DateTime.Now, CheckOutTime = DateTime.Now },
+                new Vehicle { RegNum = "OMM455", Type = global::VehicleType.Boat, Color = "Silver", Brand = "Volvo", Model = "2017", Wheels = 4, CheckInTime = DateTime.Now,  CheckOutTime = DateTime.Now }
 
                 );
         }
