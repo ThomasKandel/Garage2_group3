@@ -177,7 +177,7 @@ namespace Garage2.Controllers
         public JsonResult IsVehicleParked(string regNum)
         {
             //check if any of the Registartion Number matches the UserName specified in the Parameter using the ANY extension method.
-            return Json(!db.Vehicles.Any(p => p.RegNum.Equals(regNum) && p.CheckOutTime != null), JsonRequestBehavior.AllowGet);
+            return Json(!db.Vehicles.Any(p => (p.RegNum.Equals(regNum) && p.CheckOutTime != null)), JsonRequestBehavior.AllowGet);
         }
 
         //public JsonResult HasWheels(int wheels, VehicleType type)
