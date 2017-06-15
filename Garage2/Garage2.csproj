@@ -179,9 +179,9 @@
     <Compile Include="Migrations\201706150649390_AddDataAnnotationsMig2.Designer.cs">
       <DependentUpon>201706150649390_AddDataAnnotationsMig2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201706150716476_Abdullah cool stuff.cs" />
-    <Compile Include="Migrations\201706150716476_Abdullah cool stuff.Designer.cs">
-      <DependentUpon>201706150716476_Abdullah cool stuff.cs</DependentUpon>
+    <Compile Include="Migrations\201706150733422_removeHasWheelDataAnnotationsMig2.cs" />
+    <Compile Include="Migrations\201706150733422_removeHasWheelDataAnnotationsMig2.Designer.cs">
+      <DependentUpon>201706150733422_removeHasWheelDataAnnotationsMig2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Vehicle.cs" />
@@ -279,8 +279,8 @@
     <EmbeddedResource Include="Migrations\201706150649390_AddDataAnnotationsMig2.resx">
       <DependentUpon>201706150649390_AddDataAnnotationsMig2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706150716476_Abdullah cool stuff.resx">
-      <DependentUpon>201706150716476_Abdullah cool stuff.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706150733422_removeHasWheelDataAnnotationsMig2.resx">
+      <DependentUpon>201706150733422_removeHasWheelDataAnnotationsMig2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

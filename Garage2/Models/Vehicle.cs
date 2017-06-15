@@ -30,7 +30,6 @@ namespace Garage2.Models
         [StringLength(30, MinimumLength = 2)]
         public string Model { get; set; }
         [Required]
- //       [Remote("HasWheels", "Vehicles", ErrorMessage = "The Vehicle suppose to has number more than zero")]
         public int Wheels { get; set; }
         public DateTime CheckInTime { get; set; }
         public Nullable<DateTime> CheckOutTime { get; set; }
