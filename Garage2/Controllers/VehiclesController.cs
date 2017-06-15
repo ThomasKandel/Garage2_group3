@@ -135,7 +135,7 @@ namespace Garage2.Controllers
             return View(vehicle);
         }
 
-        // GET: Vehicles/Delete/5
+        // GET: Vehicles/CheckOut/5
         public ActionResult CheckOut(int? id)
         {
             if (id == null)
@@ -150,9 +150,9 @@ namespace Garage2.Controllers
             return View(vehicle);
         }
 
-       
 
-        // POST: Vehicles/Delete/5
+
+        // POST: Vehicles/CheckOut/5
         [HttpPost, ActionName("CheckOut")]
         [ValidateAntiForgeryToken]
         public ActionResult CheckOutConfirmed(int id)
@@ -172,6 +172,22 @@ namespace Garage2.Controllers
 
             return View(vehicle);
         }
+
+
+        public JsonResult IsVehicleParked(string regNum)
+        {
+            //check if any of the UserName matches the UserName specified in the Parameter using the ANY extension method.
+            return Json(!db.Vehicles.Any(p => p.RegNum.Equals(regNum) && p.CheckOutTime != null), JsonRequestBehavior.AllowGet);
+        }
+
+        //public JsonResult HasWheels(int wheels, VehicleType type)
+        //{
+        //    //check if any of the UserName matches the UserName specified in the Parameter using the ANY extension method.
+        //    if (type != null)
+
+        //        return Json( ), JsonRequestBehavior.AllowGet);
+        //}
+
 
         protected override void Dispose(bool disposing)
         {
