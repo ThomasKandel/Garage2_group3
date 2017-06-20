@@ -43,6 +43,7 @@ namespace Garage2.Models
 
 // new properties
         public int VehicleTypeId { get; set; }
+        public int MemberId { get; set; }
         public virtual Member Member { get; set; }
         public virtual VehicleType VehicleType { get; set; }
 // end of new properties
