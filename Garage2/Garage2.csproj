@@ -135,7 +135,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\VehiclesController.cs" />
     <Compile Include="DataAccess\ParkingContext.cs" />
-    <Compile Include="Enum\VehicleType.cs" />
+    <Compile Include="Enum\_VehicleType.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -184,7 +184,9 @@
       <DependentUpon>201706150733422_removeHasWheelDataAnnotationsMig2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Member.cs" />
     <Compile Include="Models\Vehicle.cs" />
+    <Compile Include="Models\VehicleType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

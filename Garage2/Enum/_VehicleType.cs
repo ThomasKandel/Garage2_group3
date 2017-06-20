@@ -1,4 +1,4 @@
-﻿public enum VehicleType
+﻿public enum _VehicleType
 {
     Car,
     Bus,

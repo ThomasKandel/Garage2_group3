@@ -41,10 +41,10 @@ namespace Garage2.Controllers
                     vehicles = vehicles.OrderByDescending(p => p.RegNum);
                     break;
                 case "VehicleType":
-                    vehicles = vehicles.OrderBy(p => p.Type);
+                    vehicles = vehicles.OrderBy(p => p.VehicleType.Name);
                     break;
                 case "VehicleType_desc":
-                    vehicles = vehicles.OrderByDescending(p => p.Type);
+                    vehicles = vehicles.OrderByDescending(p => p.VehicleType.Name);
                     break;
                 case "Color":
                     vehicles = vehicles.OrderBy(p => p.Color);

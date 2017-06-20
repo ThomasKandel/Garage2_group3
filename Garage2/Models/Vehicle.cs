@@ -18,8 +18,13 @@ namespace Garage2.Models
         [DisplayName("Registration number")]
         [RegularExpression(@"^[A-Z]{3}[0-9]{3}$", ErrorMessage = "Must be three capital letters followed by three digits")]
         public string RegNum { get; set; }
+
+
+// The following to be removed
+        // note that the enum VehicleType is renamed to _Vehicletype
+        // remember to remove ~\Enum\_VehicleType.cs when the property below is removed
         [Required]
-        public VehicleType Type { get; set; }
+        public _VehicleType Type { get; set; }
         [Required]
         [StringLength(30, MinimumLength = 2)]
         public string Color { get; set; }
@@ -31,7 +36,17 @@ namespace Garage2.Models
         public string Model { get; set; }
         [Required]
         public int Wheels { get; set; }
+// end ...removed
+
         public DateTime CheckInTime { get; set; }
         public Nullable<DateTime> CheckOutTime { get; set; }
+
+// new properties
+        public int VehicleTypeId { get; set; }
+        public virtual Member Member { get; set; }
+        public virtual VehicleType VehicleType { get; set; }
+// end of new properties
+
+
     }
 }
