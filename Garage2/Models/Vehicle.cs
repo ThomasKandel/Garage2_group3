@@ -14,7 +14,7 @@ namespace Garage2.Models
     {
         public int Id { get; set; }
         [Required]
-        [Remote("IsVehicleParked", "Vehicles", ErrorMessage = "The Vehicle with same registration is already parked and active now")]
+        [Remote("IsVehicleParked", "Vehicles", ErrorMessage = "This vehicle is already parked in the garage")]
         [DisplayName("Registration number")]
         [RegularExpression(@"^[A-Z]{3}[0-9]{3}$", ErrorMessage = "Must be three capital letters followed by three digits")]
         public string RegNum { get; set; }
